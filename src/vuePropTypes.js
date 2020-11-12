@@ -112,6 +112,7 @@ const grid = {
   gap: [Object, Number, String, Array],
   gapX: [Object, Number, String, Array],
   gapY: [Object, Number, String, Array],
+  gridFlow: [Object, String, Array],
   autoCols: [Object, String, Array],
   autoRows: [Object, String, Array]
 }

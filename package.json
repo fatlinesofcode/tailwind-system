@@ -1,19 +1,36 @@
 {
-  "name": "vue-tailwind-system",
+  "name": "tailwind-system",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "build": "npx babel src --out-dir dist",
+    "start": "npx babel src --watch --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fatlinesofcode/vue-tailwind-system.git"
+    "url": "git+https://github.com/fatlinesofcode/tailwind-system.git"
   },
   "author": "Philip Andrews <phil@srv.re> (frontside.com.au)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fatlinesofcode/vue-tailwind-system/issues"
+    "url": "https://github.com/fatlinesofcode/tailwind-system/issues"
   },
-  "homepage": "https://github.com/fatlinesofcode/vue-tailwind-system#readme"
+  "homepage": "https://github.com/fatlinesofcode/tailwind-system#readme",
+  "keywords": [
+    "barebones",
+    "npm",
+    "package",
+    "node",
+    "module",
+    "template",
+    "boilerplate",
+    "babel"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6"
+  }
 }

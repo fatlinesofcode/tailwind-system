@@ -97,18 +97,23 @@ const classesToString = arr => arr.filter(arr => arr.length > 0).join(' ')
       'text-align': 'text',
       display: ''
     }
- return propsToClasses(data, props, { mapKeys })
+ const classNameProps = propTypes.box
+ const classNames = propsToClasses(props, classNameProps, { mapKeys })
+ const classNames = computed( () => propsToClasses(props, classNameProps, { mapKeys }))
  *
  * @param data
  * @param props
  * @param options
  * @returns {string|*}
  */
-export const propsToClasses = (data, props, options = {}) => {
+export const propsToClasses = (props, classNameProps, options = {}) => {
   const { mapKeys } = options
-  const classes = classesToString(reduceClassNames({ props, mapKeys }))
-  if (data?.staticClass) {
-    return classes ? `${classes} ${data.staticClass}` : data.staticClass
-  }
-  return classes
+
+  const classProps = {}
+  Object.keys(classNameProps).forEach((key) => {
+    classProps[key] = props[key]
+  })
+
+
+  return classesToString(reduceClassNames({ props:classProps, mapKeys }))
 }

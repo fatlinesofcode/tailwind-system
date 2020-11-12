@@ -1,7 +1,7 @@
-import propTypes from "./propTypes";
+import vuePropTypes from "./vuePropTypes";
 import {propsToClasses} from "./propsToClasses";
 
 export default {
-  propsToClasses,
-  propTypes,
+  vuePropTypes,
+  propsToClasses
 }
