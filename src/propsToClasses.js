@@ -106,7 +106,7 @@ const classesToString = arr => arr.filter(arr => arr.length > 0).join(' ')
  * @param options
  * @returns {string|*}
  */
-export const propsToClasses = (props, classNameProps, options = {}) => {
+const propsToClasses = (props, classNameProps, options = {}) => {
   const { mapKeys } = options
 
   const classProps = {}
@@ -117,3 +117,5 @@ export const propsToClasses = (props, classNameProps, options = {}) => {
 
   return classesToString(reduceClassNames({ props:classProps, mapKeys }))
 }
+
+export default propsToClasses
