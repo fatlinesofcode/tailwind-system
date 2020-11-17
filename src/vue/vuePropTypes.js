@@ -13,7 +13,9 @@ const space = {
   pb: [Object, Number, String, Array],
   pl: [Object, Number, String, Array],
   px: [Object, Number, String, Array],
-  py: [Object, Number, String, Array]
+  py: [Object, Number, String, Array],
+  spaceX: [Object, Number, String, Array],
+  spaceY: [Object, Number, String, Array]
 }
 //https://tailwindcss.com/docs/width
 const sizing = {
@@ -27,6 +29,8 @@ const sizing = {
 
 const layout = {
   //https://tailwindcss.com/docs/display
+  container: [Object, Boolean, String, Array],
+  box: [String, Array],
   display: [Object, String, Array],
   block: [Object, Boolean, String, Array],
   hidden: [Object, Boolean, String, Array],
@@ -36,7 +40,11 @@ const layout = {
   inlineFlex: [Object, Boolean, String, Array],
   grid: [Object, Boolean, String, Array],
   inlineGrid: [Object, Boolean, String, Array],
-  container: [Object, Boolean, String, Array],
+
+  float: [Object, String, Array],
+  clear: [Object, String, Array],
+  object: [Object, String, Array],
+
 
   flexGrow: [Object, String, Array],
   flexShrink: [Object, String, Array],
@@ -67,6 +75,17 @@ const layout = {
 
 const backgrounds = {
   bg: [Object, String, Array]
+}
+const opacity = {
+  opacity: [Object, String, Array]
+}
+
+const transition = {
+  transition: [String, Array],
+  duration: [String, Array],
+  ease: [String, Array],
+  delay: [String, Array],
+  animate: [String, Array],
 }
 const typography = {
   props: {
@@ -117,14 +136,21 @@ const grid = {
   autoRows: [Object, String, Array]
 }
 
-const box = {
-  ...space,
-  ...backgrounds,
-  ...sizing,
-  ...layout
+const cursor = {
+  cursor: [Object, String, Array]
 }
 
-export default {
+const box = {
+  ...space,
+  ...opacity,
+  ...transition,
+  ...backgrounds,
+  ...sizing,
+  ...layout,
+  ...cursor
+}
+
+export const propTypes = {
   box,
   space,
   backgrounds,
