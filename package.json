@@ -1,10 +1,11 @@
 {
   "name": "tailwind-system",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx babel src --out-dir dist",
+    "build:esm": "NODE_ENV=esm babel src -o dist/index.esm.js",
     "start": "npx babel src --watch --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
