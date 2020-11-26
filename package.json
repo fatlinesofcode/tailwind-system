@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "release": "release-it",
-    "build": "npx babel src --out-dir dist",
+    "build": "npm run build:src && npm run build:esm",
+    "build:src": "npx babel src --out-dir dist",
     "build:esm": "NODE_ENV=esm babel src -o dist/index.esm.js",
     "start": "npx babel src --watch --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
