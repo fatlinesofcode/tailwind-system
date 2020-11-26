@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "release": "release-it",
     "build": "npx babel src --out-dir dist",
     "build:esm": "NODE_ENV=esm babel src -o dist/index.esm.js",
     "start": "npx babel src --watch --out-dir dist",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6"
+    "@babel/preset-env": "^7.1.6",
+    "release-it": "^14.2.2"
   }
 }

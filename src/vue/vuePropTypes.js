@@ -77,43 +77,41 @@ const backgrounds = {
   bg: [Object, String, Array]
 }
 const opacity = {
-  opacity: [Object, String, Array]
+  opacity: [Object, Number, String, Array]
 }
 
 const transition = {
   transition: [String, Array],
-  duration: [String, Array],
+  duration: [String, Number, Array],
   ease: [String, Array],
-  delay: [String, Array],
+  delay: [String, Number, Array],
   animate: [String, Array],
 }
 const typography = {
-  props: {
-    align: [Object, String, Array],
-    color: [Object, String, Array],
-    opacity: [Object, Number, String, Array],
-    //https://tailwindcss.com/docs/font-size
-    size: [Object, String, Array],
-    weight: [Object, String, Array],
-    normal: [Object, Boolean, String, Array],
-    medium: [Object, Boolean, String, Array],
-    bold: [Object, Boolean, String, Array],
-    whitespace: [Object, String, Array],
-    truncate: [Object, String, Array],
-    uppercase: [Object, Boolean, String, Array],
-    leading: [Object, Number, String, Array]
-    //https://tailwindcss.com/docs/text-align
-  },
-  map: {
-    opacity: 'text-opacity',
-    color: 'text',
-    align: 'text',
-    size: 'text',
-    weight: 'font',
-    normal: 'font-bold',
-    medium: 'font-bold',
-    bold: 'font-bold'
-  }
+  align: [Object, String, Array],
+  color: [Object, String, Array],
+  opacity: [Object, Number, String, Array],
+  //https://tailwindcss.com/docs/font-size
+  size: [Object, String, Array],
+  weight: [Object, String, Array],
+  normal: [Object, Boolean, String, Array],
+  medium: [Object, Boolean, String, Array],
+  bold: [Object, Boolean, String, Array],
+  whitespace: [Object, String, Array],
+  truncate: [Object, String, Array],
+  uppercase: [Object, Boolean, String, Array],
+  leading: [Object, Number, String, Array]
+  //https://tailwindcss.com/docs/text-align
+}
+const typographyMap = {
+  opacity: 'text-opacity',
+  color: 'text',
+  align: 'text',
+  size: 'text',
+  weight: 'font',
+  normal: 'font-bold',
+  medium: 'font-bold',
+  bold: 'font-bold'
 }
 
 const flexbox = {
@@ -150,6 +148,9 @@ const box = {
   ...cursor
 }
 
+export const mapProps = {
+  typographyMap
+}
 export const propTypes = {
   box,
   space,
