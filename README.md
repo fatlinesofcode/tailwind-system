@@ -1,5 +1,5 @@
 # tailwind-system
-Inspired by [Styled System](https://styled-system.com) tailwind-system allow you add props to your components which they then converted to [Tailwind](https://tailwindcss.com) utility classes.
+Inspired by [Styled System](https://styled-system.com), tailwind-system allow you add props to your components which are then converted to [Tailwind](https://tailwindcss.com) utility classes. It can be used with Vue or React.
 
 ## install
 ```bash
@@ -80,11 +80,11 @@ export default {
 </script>
 
 ```
-usage
+### usage
 ```vue
 <TextBox bold align="center" :opacity="90">bold text</TextBox>
 ```
-html
+### html
 ```html
 <div class="text-opacity-90 text-center font-bold">bold text</div>
 ```
@@ -118,4 +118,33 @@ export default {
 }
 </script>
 
+```
+
+## React box
+```jsx
+import React from 'react'
+import { propsToClasses, reactPropTypes } from 'tailwind-system'
+
+const propTypes = {
+  ...reactPropTypes.box,
+}
+
+const Box = ({children, ...props}) => {
+  const classNames = propsToClasses(props, propTypes)
+  return (
+    <div className={classNames}>
+      {children}
+    </div>
+  )
+}
+
+Box.propTypes = propTypes
+
+export default Box
+
+```
+
+### usage
+```jsx
+<Box mt={1} block pt={[1,2,3]} bg={'red'}>Box example</Box>
 ```
