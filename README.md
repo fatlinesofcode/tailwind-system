@@ -90,16 +90,18 @@ export default {
 
 ## Responsive Style Props
 
-Set responsive width, margin, padding, font-size, and other properties with a shorthand array syntax.
+Set responsive width, margin, padding, font-size, and other properties with a shorthand array/object syntax.
 [Read more](https://styled-system.com/responsive-styles)
 
 ```vue
 <Box :m="[ 1, 2, 3, 4 ]">responsive margin</Box>
+<Box :m="{md:3, sm:1}">responsive margin</Box>
 ```
 
 ### html
 ```html
 <div class="m-1 sm:m-2 md:m-3 lg:m-4">responsive margin</div>
+<div class="sm:m-1 md:m-3">responsive margin</div>
 ```
 
 ## Use custom responsive logic for array values

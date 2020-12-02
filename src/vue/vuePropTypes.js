@@ -74,9 +74,22 @@ const layout = {
   textAlign: propType
 }
 
-const backgrounds = {
-  bg: propType
+const border = {
+  rounded: propType,
+  border: propType,
+  borderColor: propType,
+  borderOpacity: propType,
+  borderStyle: propType,
 }
+const borderMap = {
+  'border-color': 'border',
+  'border-style': 'border',
+}
+const backgrounds = {
+  bg: propType,
+  border: propType,
+}
+
 const opacity = {
   opacity: propType
 }
@@ -146,11 +159,13 @@ const box = {
   ...backgrounds,
   ...sizing,
   ...layout,
-  ...cursor
+  ...cursor,
+  ...border,
 }
 
 export const mapProps = {
-  typographyMap
+  typographyMap,
+  borderMap
 }
 export const propTypes = {
   box,

@@ -3,8 +3,11 @@
     <Box display="inline-block">
       <img alt="Vue logo" src="./assets/logo.png">
     </Box>
-
-    <Box :mt="[1,2,3]" p="2" bg="red-50" hidden :block="{lg:true}" text-align="center">My Box</Box>
+    <Box >
+      <Box :mt="[1,2,3]" p="2" bg="red-50" hidden :block="{lg:true}"
+           text-align="center" mx="auto" maxW="md"
+           border rounded="md" border-color="blue-100">My Box</Box>
+    </Box>
 
     <Box :m="[ 1, 2, 3, 4 ]">responsive margin</Box>
 
