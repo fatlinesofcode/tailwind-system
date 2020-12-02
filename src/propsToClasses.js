@@ -13,13 +13,8 @@ const dashCase = str => str.replace(/[A-Z]/g, m => '-' + m.toLowerCase())
 // Extra Large (xl)
 @media (min-width: 1280px) {  }
 */
-const getBreakPoints = values => {
-  if (values.length <= 3) {
-    return ['', 'md', 'lg']
-  } else {
-    return ['', 'sm', 'md', 'lg', 'xl']
-  }
-}
+
+const getBreakPointsDefault = values => (['', 'sm', 'md', 'lg', 'xl'])
 
 const objectToClassNames = ({ value, key, mapKeys }) => {
   const breakpoints = Object.keys(value)
@@ -29,8 +24,8 @@ const objectToClassNames = ({ value, key, mapKeys }) => {
   }, [])
   return names.join(' ')
 }
-const arrayToClassNames = ({ value, key, mapKeys }) => {
-  const classNameBreakpoints = getBreakPoints(value)
+const arrayToClassNames = ({ value, key, mapKeys, getBreakPoints }) => {
+  const classNameBreakpoints = getBreakPoints ? getBreakPoints(value) : getBreakPointsDefault(value)
   const names = value.reduce((acc, val, index) => {
     const breakpoint = classNameBreakpoints[index]
     return [...acc, toClassName({ value: val, key, breakpoint, mapKeys })]
@@ -69,7 +64,7 @@ const toClassName = ({ value, key, mapKeys, breakpoint = '' }) => {
  * @param mapKeys
  * @returns {*[]}
  */
-const reduceClassNames = ({ props, mapKeys }) => {
+const reduceClassNames = ({ props, mapKeys, getBreakPoints }) => {
   const propsKeys = Object.keys(props)
   return Object.keys(props)
     .filter(name => propsKeys.find(key => key === name))
@@ -79,7 +74,7 @@ const reduceClassNames = ({ props, mapKeys }) => {
         let className = toClassName({ value, key, mapKeys })
         if (Array.isArray(value)) {
           // css classname exists for breakpoint
-          className = arrayToClassNames({ value, key, mapKeys })
+          className = arrayToClassNames({ value, key, mapKeys, getBreakPoints })
         } else if (typeof value === 'object') {
           className = objectToClassNames({ value, key, mapKeys })
         }
@@ -107,7 +102,7 @@ const classesToString = arr => arr.filter(arr => arr.length > 0).join(' ')
  * @returns {string|*}
  */
 const propsToClasses = (props, classNameProps, options = {}) => {
-  const { mapKeys } = options
+  const { mapKeys, getBreakPoints } = options
 
   const classProps = {}
   Object.keys(classNameProps).forEach((key) => {
@@ -115,7 +110,7 @@ const propsToClasses = (props, classNameProps, options = {}) => {
   })
 
 
-  return classesToString(reduceClassNames({ props:classProps, mapKeys }))
+  return classesToString(reduceClassNames({ props:classProps, mapKeys, getBreakPoints }))
 }
 
 export default propsToClasses

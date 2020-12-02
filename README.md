@@ -44,7 +44,7 @@ props can be static values, variables and arrays / objects for responsive values
 ```
 will render the html
 ```html
-<div class="mt-1 md:mt-2 lg:mt-3 p-2 bg-red-50 lg:block hidden text-center">My Box</div>
+<div class="mt-1 sm:mt-2 md:mt-3 p-2 bg-red-50 lg:block hidden text-center">My Box</div>
 ```
 
 ## create a TextBox (vue 2)
@@ -78,7 +78,6 @@ export default {
   }
 }
 </script>
-
 ```
 ### usage
 ```vue
@@ -89,6 +88,52 @@ export default {
 <div class="text-opacity-90 text-center font-bold">bold text</div>
 ```
 
+## Responsive Style Props
+
+Set responsive width, margin, padding, font-size, and other properties with a shorthand array syntax.
+[Read more](https://styled-system.com/responsive-styles)
+
+```vue
+<Box :m="[ 1, 2, 3, 4 ]">responsive margin</Box>
+```
+
+### html
+```html
+<div class="m-1 sm:m-2 md:m-3 lg:m-4">responsive margin</div>
+```
+
+## Use custom responsive logic for array values
+```js
+const getBreakPoints = values => {
+  if (values.length <= 2) {
+    return ['', 'lg']
+  }
+  else if (values.length <= 3) {
+    return ['', 'md', 'lg']
+  } else {
+    return ['', 'sm', 'md', 'lg', 'xl']
+  }
+}
+propsToClasses(this.$props, classNameProps, {getBreakPoints})
+
+```
+
+## Available props
+
+[Full list](https://github.com/fatlinesofcode/tailwind-system/blob/main/src/vue/vuePropTypes.js)
+
+```js
+export const propTypes = {
+  box,
+  space,
+  backgrounds,
+  sizing,
+  typography,
+  layout,
+  flexbox,
+  grid
+}
+```
 
 ## Vue 3 box
 ```vue

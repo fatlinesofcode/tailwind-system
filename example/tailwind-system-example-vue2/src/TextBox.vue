@@ -6,7 +6,19 @@
 
 <script>
 // import { propsToClasses, vuePropTypes, vueMapProps } from 'tailwind-system'
-import {propsToClasses, vuePropTypes, vueMapProps} from "../../../src";
+import {propsToClasses, vuePropTypes, vueMapProps} from '../../../dist'
+
+
+const getBreakPoints = values => {
+  if (values.length <= 2) {
+    return ['', 'lg']
+  }
+  else if (values.length <= 3) {
+    return ['', 'md', 'lg']
+  } else {
+    return ['', 'sm', 'md', 'lg', 'xl']
+  }
+}
 
 const classNameProps = {
   ...vuePropTypes.box,
@@ -22,7 +34,7 @@ export default {
       const mapKeys = {
         ...vueMapProps.typographyMap
       }
-      return propsToClasses(this.$props, classNameProps, {mapKeys})
+      return propsToClasses(this.$props, classNameProps, {mapKeys, getBreakPoints})
     }
   }
 }

@@ -6,7 +6,7 @@
 
 <script>
 import { ref, computed } from "vue";
-import { propsToClasses, vuePropTypes } from 'tailwind-system'
+import { propsToClasses, vuePropTypes } from '../../dist'
 const classNameProps = vuePropTypes.box
 export default {
   name: 'Box',

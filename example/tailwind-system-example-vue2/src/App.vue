@@ -5,7 +5,10 @@
     </Box>
 
     <Box :mt="[1,2,3]" p="2" bg="red-50" hidden :block="{lg:true}" text-align="center">My Box</Box>
-    <TextBox bold align="center" :opacity="90">bold text</TextBox>
+
+    <Box :m="[ 1, 2, 3, 4 ]">responsive margin</Box>
+
+    <TextBox bold align="center" :opacity="90" :mt="[1,5]">bold text</TextBox>
   </div>
 </template>
 
