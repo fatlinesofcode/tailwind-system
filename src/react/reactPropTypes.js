@@ -7,7 +7,7 @@ const propType = PropTypes.oneOfType([
   PropTypes.array,
   PropTypes.object,
 ])
-
+//https://tailwindcss.com/docs/padding
 const space = {
   m: propType,
   mt: propType,
@@ -26,7 +26,7 @@ const space = {
   spaceX: propType,
   spaceY: propType
 }
-
+//https://tailwindcss.com/docs/width
 const sizing = {
   w: propType,
   minW: propType,
@@ -35,9 +35,8 @@ const sizing = {
   minH: propType,
   maxH: propType
 }
-
+//https://tailwindcss.com/docs/display
 const layout = {
-  //https://tailwindcss.com/docs/display
   container: propType,
   box: propType,
   display: propType,
@@ -96,11 +95,12 @@ const transition = {
   delay: propType,
   animate: propType,
 }
+//https://tailwindcss.com/docs/font-size
+//https://tailwindcss.com/docs/text-align
 const typography = {
   align: propType,
   color: propType,
   opacity: propType,
-  //https://tailwindcss.com/docs/font-size
   size: propType,
   weight: propType,
   normal: propType,
@@ -110,7 +110,6 @@ const typography = {
   truncate: propType,
   uppercase: propType,
   leading: propType
-  //https://tailwindcss.com/docs/text-align
 }
 const typographyMap = {
   opacity: 'text-opacity',
@@ -170,3 +169,4 @@ export const propTypes = {
   flexbox,
   grid
 }
+

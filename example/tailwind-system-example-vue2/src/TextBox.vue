@@ -5,8 +5,8 @@
 </template>
 
 <script>
-// import { propsToClasses, vuePropTypes, vueMapProps } from 'tailwind-system'
-import {propsToClasses, vuePropTypes, vueMapProps} from '../../../dist'
+import { propsToClasses, vuePropTypes, vueMapProps } from 'tailwind-system'
+// import {propsToClasses, vuePropTypes, vueMapProps} from '../../../dist'
 
 
 const getBreakPoints = values => {

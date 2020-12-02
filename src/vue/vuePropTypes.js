@@ -1,107 +1,108 @@
 //https://tailwindcss.com/docs/padding
+const propType = [Number, String, Boolean, Object,  Array]
+//https://tailwindcss.com/docs/padding
 const space = {
-  m: [Object, Number, String, Array],
-  mt: [Object, Number, String, Array],
-  mr: [Object, Number, String, Array],
-  mb: [Object, Number, String, Array],
-  ml: [Object, Number, String, Array],
-  mx: [Object, Number, String, Array],
-  my: [Object, Number, String, Array],
-  p: [Object, Number, String, Array],
-  pt: [Object, Number, String, Array],
-  pr: [Object, Number, String, Array],
-  pb: [Object, Number, String, Array],
-  pl: [Object, Number, String, Array],
-  px: [Object, Number, String, Array],
-  py: [Object, Number, String, Array],
-  spaceX: [Object, Number, String, Array],
-  spaceY: [Object, Number, String, Array]
+  m: propType,
+  mt: propType,
+  mr: propType,
+  mb: propType,
+  ml: propType,
+  mx: propType,
+  my: propType,
+  p: propType,
+  pt: propType,
+  pr: propType,
+  pb: propType,
+  pl: propType,
+  px: propType,
+  py: propType,
+  spaceX: propType,
+  spaceY: propType
 }
 //https://tailwindcss.com/docs/width
 const sizing = {
-  w: [Object, Number, String, Array],
-  minW: [Object, Number, String, Array],
-  maxW: [Object, Number, String, Array],
-  h: [Object, Number, String, Array],
-  minH: [Object, Number, String, Array],
-  maxH: [Object, Number, String, Array]
+  w: propType,
+  minW: propType,
+  maxW: propType,
+  h: propType,
+  minH: propType,
+  maxH: propType
 }
-
+//https://tailwindcss.com/docs/display
 const layout = {
-  //https://tailwindcss.com/docs/display
-  container: [Object, Boolean, String, Array],
-  box: [String, Array],
-  display: [Object, String, Array],
-  block: [Object, Boolean, String, Array],
-  hidden: [Object, Boolean, String, Array],
-  inlineBlock: [Object, Boolean, String, Array],
-  inline: [Object, Boolean, String, Array],
-  flex: [Object, Boolean, String, Array],
-  inlineFlex: [Object, Boolean, String, Array],
-  grid: [Object, Boolean, String, Array],
-  inlineGrid: [Object, Boolean, String, Array],
+  container: propType,
+  box: propType,
+  display: propType,
+  block: propType,
+  hidden: propType,
+  inlineBlock: propType,
+  inline: propType,
+  flex: propType,
+  inlineFlex: propType,
+  grid: propType,
+  inlineGrid: propType,
 
-  float: [Object, String, Array],
-  clear: [Object, String, Array],
-  object: [Object, String, Array],
+  float: propType,
+  clear: propType,
+  object: propType,
 
 
-  flexGrow: [Object, String, Array],
-  flexShrink: [Object, String, Array],
+  flexGrow: propType,
+  flexShrink: propType,
 
-  absolute: [Object, Boolean, String, Array],
-  relative: [Object, Boolean, String, Array],
-  fixed: [Object, Boolean, String, Array],
+  absolute: propType,
+  relative: propType,
+  fixed: propType,
 
-  overflow: [Object, String, Array],
-  overflowX: [Object, String, Array],
-  overflowY: [Object, String, Array],
-  scrolling: [Object, String, Array],
+  overflow: propType,
+  overflowX: propType,
+  overflowY: propType,
+  scrolling: propType,
   //https://tailwindcss.com/docs/position
-  position: [Object, Boolean, String, Array],
-  inset: [Object, Number, String, Array],
-  top: [Object, Number, String, Array],
-  right: [Object, Number, String, Array],
-  bottom: [Object, Number, String, Array],
-  left: [Object, Number, String, Array],
+  position: propType,
+  inset: propType,
+  top: propType,
+  right: propType,
+  bottom: propType,
+  left: propType,
 
-  visible: [Object, Boolean, String, Array],
-  invisible: [Object, Boolean, String, Array],
+  visible: propType,
+  invisible: propType,
   //https://tailwindcss.com/docs/z-index
-  z: [Object, Number, String, Array],
+  z: propType,
 
-  textAlign: [Object, String, Array]
+  textAlign: propType
 }
 
 const backgrounds = {
-  bg: [Object, String, Array]
+  bg: propType
 }
 const opacity = {
-  opacity: [Object, Number, String, Array]
+  opacity: propType
 }
 
 const transition = {
-  transition: [String, Array],
-  duration: [String, Number, Array],
-  ease: [String, Array],
-  delay: [String, Number, Array],
-  animate: [String, Array],
+  transition: propType,
+  duration: propType,
+  ease: propType,
+  delay: propType,
+  animate: propType,
 }
+//https://tailwindcss.com/docs/font-size
+//https://tailwindcss.com/docs/text-align
 const typography = {
-  align: [Object, String, Array],
-  color: [Object, String, Array],
-  opacity: [Object, Number, String, Array],
-  //https://tailwindcss.com/docs/font-size
-  size: [Object, String, Array],
-  weight: [Object, String, Array],
-  normal: [Object, Boolean, String, Array],
-  medium: [Object, Boolean, String, Array],
-  bold: [Object, Boolean, String, Array],
-  whitespace: [Object, String, Array],
-  truncate: [Object, String, Array],
-  uppercase: [Object, Boolean, String, Array],
-  leading: [Object, Number, String, Array]
-  //https://tailwindcss.com/docs/text-align
+  align: propType,
+  color: propType,
+  opacity: propType,
+  size: propType,
+  weight: propType,
+  normal: propType,
+  medium: propType,
+  bold: propType,
+  whitespace: propType,
+  truncate: propType,
+  uppercase: propType,
+  leading: propType
 }
 const typographyMap = {
   opacity: 'text-opacity',
@@ -115,27 +116,27 @@ const typographyMap = {
 }
 
 const flexbox = {
-  direction: [Object, String, Array],
-  wrap: [Object, String, Array],
-  grow: [Object, String, Array],
-  shrink: [Object, String, Array],
-  justify: [Object, String, Array],
-  items: [Object, String, Array]
+  direction: propType,
+  wrap: propType,
+  grow: propType,
+  shrink: propType,
+  justify: propType,
+  items: propType
 }
 
 const grid = {
-  cols: [Object, Number, String, Array],
-  rows: [Object, Number, String, Array],
-  gap: [Object, Number, String, Array],
-  gapX: [Object, Number, String, Array],
-  gapY: [Object, Number, String, Array],
-  gridFlow: [Object, String, Array],
-  autoCols: [Object, String, Array],
-  autoRows: [Object, String, Array]
+  cols: propType,
+  rows: propType,
+  gap: propType,
+  gapX: propType,
+  gapY: propType,
+  gridFlow: propType,
+  autoCols: propType,
+  autoRows: propType
 }
 
 const cursor = {
-  cursor: [Object, String, Array]
+  cursor: propType
 }
 
 const box = {

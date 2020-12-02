@@ -5,8 +5,8 @@
 </template>
 
 <script>
-// import { propsToClasses, vuePropTypes } from 'tailwind-system'
-import { propsToClasses, vuePropTypes } from '../../../dist'
+import { propsToClasses, vuePropTypes } from 'tailwind-system'
+// import { propsToClasses, vuePropTypes } from '../../../dist'
 const classNameProps = {
   ...vuePropTypes.box
 }
