@@ -82,6 +82,7 @@ const border = {
   borderStyle: propType,
 }
 const borderMap = {
+  'border-radius': 'rounded',
   'border-color': 'border',
   'border-style': 'border',
 }
@@ -123,8 +124,9 @@ const typographyMap = {
   align: 'text',
   size: 'text',
   weight: 'font',
-  normal: 'font-bold',
-  medium: 'font-bold',
+  regular: 'font-regular',
+  normal: 'font-normal',
+  medium: 'font-medium',
   bold: 'font-bold'
 }
 
@@ -163,7 +165,14 @@ const box = {
   ...border,
 }
 
+const boxMap = {
+  ...borderMap,
+  'text-align': 'text',
+  display: ''
+}
+
 export const mapProps = {
+  boxMap,
   typographyMap,
   borderMap
 }
