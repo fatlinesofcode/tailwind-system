@@ -52,7 +52,7 @@ const toClassName = ({ value, key, mapKeys, breakpoint = '' }) => {
   } else {
     const prefix = name === '' ? '' : `${name}-`
     if (parseInt(value) < 0) {
-      return `-${breakpointPrefix}${prefix}${Math.abs(value)}`
+      return `${breakpointPrefix}-${prefix}${Math.abs(value)}`
     }
     return `${breakpointPrefix}${prefix}${value}`
   }
